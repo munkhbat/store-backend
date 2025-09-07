@@ -4,6 +4,7 @@ import City from "./models/city.model";
 import District from "./models/district.model";
 import Horoo from "./models/horoo.model";
 import User from "./models/user.model";
+import Company from "./models/company.model";
 dotenv.config();
 const { DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_NAME } = process.env;
 
@@ -17,7 +18,7 @@ const sequelize = new Sequelize(<Options>{
   logging: false,
 });
 
-let models = [City, District, Horoo, User];
+let models = [City, District, Horoo, User, Company];
 
 models.forEach((model) => model.initialize(sequelize));
 
@@ -48,4 +49,5 @@ export {
   District as DistrictModel,
   Horoo as HorooModel,
   User as UserModel,
+  Company as CompanyModel,
 };
